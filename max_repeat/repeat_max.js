@@ -1,19 +1,16 @@
 // find the maximum repeat array and return it as object with no. of count.
 
 
-
-function countRepetition(arr){
-  return arr.reduce((element, count) => {
-    if(!element[count]){
-      element = {...element, [count]: 1};
-      return element;  
-    }else{
-      element = {...element, [count]:++element[count]};
-      return element;
+let numbers = [1,3,7,9,2,2,2,7,8,9,9];
+ function maxRepeat(array){
+  const result = array.reduce((acc,current) =>{
+    acc[current] = (acc[current] || 0) +1;
+    if (!acc.max || acc[current] > acc[acc.max]){
+      acc.max= current;
     }
-  })
-}
-
-let numbers = [10,7,79,7,55,23,55,8,98,8];
-let ans = countRepetition(numbers);
-console.log(ans);
+    return acc;
+    
+  }, {max:null});
+  return result;
+ }
+ console.log(maxRepeat(numbers));

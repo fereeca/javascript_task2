@@ -14,13 +14,8 @@ let people = [{
   name: "Ujjwal",
   age: 23,
   city: "Bhaktapur"
-},
-
-{
-  name: "Ram",
-  age: 25,
-  city: "Kathmandu"
-}];
+}
+];
 
 function sortByCity(acc,current){
   return {...acc,[current.city]: current};
